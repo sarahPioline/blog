@@ -4,19 +4,22 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthorEntity } from './author/author.entity';
 import { AuthorModule } from './author/author.module';
+import { TagModule } from './tag/tag.module';
 import { CommentsEntity } from './comments/comments.entity';
 import { CommentsModule } from './comments/comments.module';
 import { PostEntity } from './post/post.entity';
+import { TagEntity } from './tag/tag.entity';
+import { PostModule } from './post/post.module';
 
 @Module({
   imports: [TypeOrmModule.forRoot({type: 'mysql',
   host: 'localhost',
-  port: 8889,
+  port: 3306,
   username: 'root',
-  password: 'root',
+  password: '',
   database: 'blog',
-  entities: [AuthorEntity, CommentsEntity, PostEntity],
-  synchronize: true,}), AuthorModule, CommentsModule],
+  entities: [AuthorEntity, CommentsEntity, PostEntity, TagEntity],
+  synchronize: true,}), AuthorModule, CommentsModule, TagModule, PostModule],
   controllers: [AppController],
   providers: [AppService],
 })
