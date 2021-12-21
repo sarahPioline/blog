@@ -4,6 +4,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthorEntity } from './author/author.entity';
 import { AuthorModule } from './author/author.module';
+import { CommentsEntity } from './comments/comments.entity';
+import { CommentsModule } from './comments/comments.module';
 
 @Module({
   imports: [TypeOrmModule.forRoot({type: 'mysql',
@@ -12,8 +14,8 @@ import { AuthorModule } from './author/author.module';
   username: 'root',
   password: 'root',
   database: 'blog',
-  entities: [AuthorEntity],
-  synchronize: true,}), AuthorModule],
+  entities: [AuthorEntity, CommentsEntity],
+  synchronize: true,}), AuthorModule, CommentsModule],
   controllers: [AppController],
   providers: [AppService],
 })
