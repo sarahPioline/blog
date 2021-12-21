@@ -6,6 +6,7 @@ import { AuthorEntity } from './author/author.entity';
 import { AuthorModule } from './author/author.module';
 import { CommentsEntity } from './comments/comments.entity';
 import { CommentsModule } from './comments/comments.module';
+import { PostEntity } from './post/post.entity';
 
 @Module({
   imports: [TypeOrmModule.forRoot({type: 'mysql',
@@ -14,7 +15,7 @@ import { CommentsModule } from './comments/comments.module';
   username: 'root',
   password: 'root',
   database: 'blog',
-  entities: [AuthorEntity, CommentsEntity],
+  entities: [AuthorEntity, CommentsEntity, PostEntity],
   synchronize: true,}), AuthorModule, CommentsModule],
   controllers: [AppController],
   providers: [AppService],

@@ -1,6 +1,7 @@
 import { Entity, Column, PrimaryGeneratedColumn, BeforeInsert, ManyToOne, JoinColumn } from 'typeorm';
 import * as crypto from 'crypto';
 import { AuthorEntity } from 'src/author/author.entity';
+import { PostEntity } from 'src/post/post.entity';
 @Entity('COMMENTS')
 export class CommentsEntity {
   @PrimaryGeneratedColumn()
@@ -19,11 +20,11 @@ export class CommentsEntity {
   Point: number;
 
 
-/*
+
   @ManyToOne(type => PostEntity)
   @JoinColumn({ name: 'post' })
   post: PostEntity;
-  */
+  
   @ManyToOne(type => AuthorEntity)
   @JoinColumn({ name: 'author' })
   Author: AuthorEntity;

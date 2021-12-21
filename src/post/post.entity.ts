@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn, BeforeInsert, OneToMany } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from 'typeorm';
 import { AuthorEntity } from 'src/author/author.entity';
 // import { CommentEntity } from 'src/comment/comment.entity';
     @Entity('POSTS')
@@ -21,8 +21,11 @@ import { AuthorEntity } from 'src/author/author.entity';
       @Column()
       Image : string;
 
-      @Column()
-      Author : AuthorEntity;
+      
+
+      @ManyToOne(type => AuthorEntity)
+  @JoinColumn({ name: 'author' })
+  Author: AuthorEntity;
 
     //   @OneToMany(() => CommentEntity, comment => comment.post)
     //   Comments : Comment[];
