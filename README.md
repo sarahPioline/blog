@@ -1,3 +1,7 @@
+Titouan Bonamy
+Thomas Heuveline
+Sarah Pioline 
+
 # exo nest
 
 Faire un blog avec 
