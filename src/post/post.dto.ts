@@ -2,7 +2,7 @@ export interface PostDTO {
     Id: number;
     Title: string;
     SubTitle: string;
-    Date : Date;
+    Date : string;
     Tags : string;
     Image : string;
   }

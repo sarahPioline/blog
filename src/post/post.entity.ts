@@ -13,7 +13,7 @@ import { AuthorEntity } from 'src/author/author.entity';
       Subtitle: string;
 
       @Column()
-      Date : Date;
+      Date : string;
 
       @Column()
       Tags : string;

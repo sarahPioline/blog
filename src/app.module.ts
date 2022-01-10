@@ -14,9 +14,9 @@ import { PostModule } from './post/post.module';
 @Module({
   imports: [TypeOrmModule.forRoot({type: 'mysql',
   host: 'localhost',
-  port: 3306,
+  port: 8889,
   username: 'root',
-  password: '',
+  password: 'root',
   database: 'blog',
   entities: [AuthorEntity, CommentsEntity, PostEntity, TagEntity],
   synchronize: true,}), AuthorModule, CommentsModule, TagModule, PostModule],
