@@ -21,9 +21,8 @@ export class CommentsEntity {
 
 
 
-  @ManyToOne(type => PostEntity)
-  @JoinColumn({ name: 'post' })
-  post: PostEntity;
+  @Column()
+  post: number;
   
   @ManyToOne(type => AuthorEntity)
   @JoinColumn({ name: 'author' })

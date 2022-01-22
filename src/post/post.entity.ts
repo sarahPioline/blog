@@ -1,6 +1,6 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, JoinColumn, OneToMany } from 'typeorm';
 import { AuthorEntity } from 'src/author/author.entity';
-// import { CommentEntity } from 'src/comment/comment.entity';
+ import { CommentsEntity } from 'src/comments/comments.entity';
     @Entity('POSTS')
     export class PostEntity {
       @PrimaryGeneratedColumn()
@@ -21,13 +21,17 @@ import { AuthorEntity } from 'src/author/author.entity';
       @Column()
       Image : string;
 
+      @Column()
+      Content: string;
+
       
 
       @ManyToOne(type => AuthorEntity)
-  @JoinColumn({ name: 'author' })
-  Author: AuthorEntity;
+      @JoinColumn({ name: 'author' })
+        Author: AuthorEntity;
 
-    //   @OneToMany(() => CommentEntity, comment => comment.post)
-    //   Comments : Comment[];
-    
+      @OneToMany(type => CommentsEntity, comment => comment.post)
+       Comments : Comment[];
+
+ 
     }

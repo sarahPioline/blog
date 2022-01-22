@@ -11,6 +11,7 @@ import {
 
   import { PostService } from './post.service';
   import { PostDTO } from './post.dto';
+import { ParseIntPipe } from '@nestjs/common';
 
   @Controller('post')
   export class PostController {
@@ -63,4 +64,9 @@ import {
         message: 'User deleted successfully',
       };
     }
+
+    @Get('comments')
+  getComments( @Body('postID', ParseIntPipe) postID: number ) {
+    return this.postService.getcommentsOfpost(postID);
+  }
   }

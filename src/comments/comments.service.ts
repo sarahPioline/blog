@@ -4,6 +4,7 @@ import { Repository } from 'typeorm';
 
 import { CommentsEntity } from './comments.entity';
 import { CommentsDTO } from './comments.dto';
+import { PostDTO } from 'src/post/post.dto';
 
 @Injectable()
 export class CommentsService {
@@ -14,6 +15,10 @@ export class CommentsService {
 
   async showAll() {
     return await this.commentsRepository.find();
+  }
+
+  async showAllByPost(data: PostDTO) {
+    return await this.commentsRepository.find(data);
   }
 
   async create(data: CommentsDTO) {

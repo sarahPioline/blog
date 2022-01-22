@@ -3,6 +3,8 @@ export interface PostDTO {
     Title: string;
     SubTitle: string;
     Date : string;
+    Content : string; 
     Tags : string;
     Image : string;
+    Comment : number[];
   }

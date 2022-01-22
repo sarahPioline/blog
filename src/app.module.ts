@@ -19,7 +19,7 @@ import { PostModule } from './post/post.module';
   password: 'root',
   database: 'blog',
   entities: [AuthorEntity, CommentsEntity, PostEntity, TagEntity],
-  synchronize: true,}), AuthorModule, CommentsModule, TagModule, PostModule],
+  synchronize: false,}), AuthorModule, CommentsModule, TagModule, PostModule],
   controllers: [AppController],
   providers: [AppService],
 })

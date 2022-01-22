@@ -6,5 +6,6 @@ export interface CommentsDTO {
     Content:string;
     Point: number;
     Author: AuthorEntity;
+    Post: number
     //Post : PostEntity;
   }
